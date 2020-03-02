@@ -1,18 +1,20 @@
 import findspark
 findspark.init('/opt/apache-spark')
 import pyspark
+from pyspark.sql import SparkSession
 from pyspark.streaming import StreamingContext
 from pyspark.streaming.kafka import KafkaUtils
-from pyspark.sql import SQLContext
 from actors import pyProducer
 import json
 
 
-sc = pyspark.SparkContext \
-            .getOrCreate(pyspark.SparkConf() \
-            .setMaster("local[*]"))
+spark = SparkSession \
+        .builder \
+        .appName("Python Spark SQL basic example") \
+        .getOrCreate()
+spark.conf.set("spark.sql.execution.arrow.enabled", "true")
+sc = spark.sparkContext
 sc.setLogLevel("FATAL")
-sqlContext = SQLContext(sc)
 ssc = StreamingContext(sc, 60)
 
 
