@@ -1,4 +1,4 @@
-# Streaming and processing text files with Kafka and Spark Streaming.
+# Streaming and processing text files with Kafka and PySpark
 
 This project aims to stream contents of text files inside a local directory to Apache Kafka, and process them in batch with Spark Streaming through the Python API.
 
@@ -62,3 +62,4 @@ This project is written entirely in Python. To make use of the softwares above, 
 1. The first script will process the whole corpus and send each word to a Kafka topic Q1.
 2. The second script will load a list of topic and monitor the streams from Q1. If a match is found, it will send data to either topic Q2 (keyword match) or Q3 (topic name match).
 3. The third script consumes records from the last offset, and save them in Parquet format.
+4. Data Analysis (WIP)
