@@ -1,0 +1,17 @@
+{
+  "color":[
+    "red",
+    "blue",
+    "green"
+  ],
+  "sport":[
+    "football",
+    "tennis",
+    "horseriding"
+  ],
+  "plane":[
+    "wing",
+    "pilot",
+    "propeller"
+  ]
+}
